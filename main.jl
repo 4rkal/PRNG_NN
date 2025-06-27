@@ -14,7 +14,7 @@ struct NumberGuesser{L}
     layers::L
 end
 
-# Flux.@layer NumberGuesser
+Flux.@layer NumberGuesser
 
 function NumberGuesser()
     # layers = Chain(

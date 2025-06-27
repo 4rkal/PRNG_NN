@@ -14,17 +14,20 @@ struct NumberGuesser{L}
     layers::L
 end
 
-Flux.@layer NumberGuesser
+# Flux.@layer NumberGuesser
 
 function NumberGuesser()
+    # layers = Chain(
+    #     Dense(99 => 256, bias=false),
+    #     Dropout(.1),
+    #     Dense(256 => 512, bias=false),
+    #     Dropout(.2),
+    #     Dense(512 => 256, bias=false),
+    #     Dropout(.2),
+    #     Dense(256 => 100, relu),
+    # )
     layers = Chain(
-        Dense(99 => 256, bias=false),
-        Dropout(.1),
-        Dense(256 => 512, bias=false),
-        Dropout(.2),
-        Dense(512 => 256, bias=false),
-        Dropout(.2),
-        Dense(256 => 100, relu),
+        Dense(99 => 100, bias=false),
     )
     return NumberGuesser(layers)
 end
@@ -58,7 +61,7 @@ for epoch in 1:100
     correct_predictions = 0
     total_predictions = 0
     
-    for i in 1:1000
+    for i in 1:10000
         inputs, targets = create_batch(32)
         
         l, grad = Flux.withgradient(model) do m
@@ -91,6 +94,8 @@ for epoch in 1:100
         end
     end
 end
+
+Random.seed!(1234)
 
 final_inputs, final_targets = create_batch(10000)
 final_predictions = model(final_inputs)

@@ -3,6 +3,7 @@ Pseudorandom number generator neural network, trained to guess next number.
 
 ## Simple Dense Network
 ![SDN](img/training_progress.png)
+
 A simple single-layer linear transformation (`Dense(99 => 100)`) that treats the input sequence as an unordered vector without considering positional information.
 
 ## Positional Encoding Network

@@ -46,8 +46,9 @@ cd PRNG_NN
 ```
 ## Install dependencies
 Run julia in the project directory
-
-`julia`
+```
+julia
+```
 
 Then activate the environment and install required packages
 ```

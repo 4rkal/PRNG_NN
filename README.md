@@ -69,4 +69,7 @@ julia rope.jl
 ```
 
 ## View results
-Training progress plots are stored are saved after each run
+Training progress plots are ssaved after each run.
+
+Baseline: training_progress.png
+RoPE: training_progress_rope.png

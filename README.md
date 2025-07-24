@@ -37,12 +37,36 @@ The key finding is that **positional encoding matters**: while the baseline line
 
 # Usage
 
-### Running the baseline model
+In order to use this project you need to download and install [julia](https://julialang.org/)
+
+### Clone the repository
+```bash
+git clone https://github.com/4rkal/PRNG_NN
+cd PRNG_NN
+```
+## Install dependencies
+Run julia in the project directory
+
+`julia`
+
+Then activate the environment and install required packages
+```
+using Pkg
+Pkg.activate(".")
+Pkg.instantiate()
+```
+### Run experiments
+
+
+#### Running the baseline model
 ```julia
 julia main.jl
 ```
 
-### Running the RoPE model
+#### Running the RoPE model
 ```julia
 julia rope.jl
 ```
+
+## View results
+Training progress plots are stored are saved after each run
